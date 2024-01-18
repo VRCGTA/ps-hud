@@ -271,7 +271,7 @@ const store = () => {
         state.icons.hunger.progressValue = capAmountToHundred(data.hunger);
         state.icons.stress.progressValue = capAmountToHundred(data.stress);
         // Should be 1.5, 3, 6 so * 16.6 to show progress
-        state.icons.voice.progressValue = capAmountToHundred(data.voice * 16.6);
+        state.icons.voice.progressValue = capAmountToHundred(data.voice * 11.11);
         state.icons.oxygen.progressValue = capAmountToHundred(data.oxygen);
         state.icons.parachute.progressValue = capAmountToHundred(data.parachute);
         state.icons.engine.progressValue = capAmountToHundred(data.engine);

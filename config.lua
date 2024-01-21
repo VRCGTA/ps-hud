@@ -7,6 +7,7 @@ Config.MinimumStress = 75 -- Minimum Stress Level For Screen Shaking
 Config.MinimumSpeedUnbuckled = 80 -- Going Over This Speed Will Cause Stress
 Config.MinimumSpeed = 160 -- Going Over This Speed Will Cause Stress
 Config.DisablePoliceStress = true -- Default: false, If true will disable stress for people with the police job
+Config.DisableAmbulanceStress = true
 Config.FuelScript = 'cdn-fuel' -- change to lj-fuel if you use lj-fuel or something else if you use any other LegcyFuel compatible script
 
 -- Admin only to change hud icons/shapes

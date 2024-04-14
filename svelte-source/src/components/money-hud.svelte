@@ -6,7 +6,7 @@
 <div id="money-container">
   {#if $MoneyHudStore.showCash}
     <div transition:fade|local="{{duration: 1000}}">
-      <p><span id="sign">$&nbsp;</span><span id="money">{$MoneyHudStore.cash}</span></p>
+      <p><span id="sign">𝕍&nbsp;</span><span id="money">{$MoneyHudStore.cash}</span></p>
     </div>
   {/if}
   {#if $MoneyHudStore.showBank}

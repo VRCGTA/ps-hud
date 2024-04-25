@@ -6,20 +6,20 @@
 <div id="money-container">
   {#if $MoneyHudStore.showCash}
     <div transition:fade|local="{{duration: 1000}}">
-      <p><span id="sign">𝕍&nbsp;</span><span id="money">{$MoneyHudStore.cash}</span></p>
+      <p><span id="sign">𝕍&nbsp;</span><span id="money">{Number($MoneyHudStore.cash).toLocaleString()}</span></p>
     </div>
   {/if}
   {#if $MoneyHudStore.showBank}
     <div transition:fade|local="{{duration: 1000}}">
-      <p><span id="sign">𝕍&nbsp;</span><span id="bank">{$MoneyHudStore.bank}</span></p>
+      <p><span id="sign">𝕍&nbsp;</span><span id="bank">{Number($MoneyHudStore.bank).toLocaleString()}</span></p>
     </div>
   {/if}
   {#if $MoneyHudStore.showUpdate}
     <div transition:fade|local="{{duration: 1000}}">
       {#if $MoneyHudStore.plus}
-        <p id="money"><span id="plus">+&nbsp;</span><span id="money">{$MoneyHudStore.amount}</span></p>
+        <p id="money"><span id="plus">+&nbsp;</span><span id="money">{Number($MoneyHudStore.amount).toLocaleString()}</span></p>
       {:else if $MoneyHudStore.minus}
-        <p id="minus"><span id="minus">-&nbsp;</span><span id="money">{$MoneyHudStore.amount}</span></p>
+        <p id="minus"><span id="minus">-&nbsp;</span><span id="money">{Number($MoneyHudStore.amount).toLocaleString()}</span></p>
       {/if}
     </div>
   {/if}

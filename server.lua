@@ -35,7 +35,7 @@ RegisterNetEvent('hud:server:GainStress', function(amount)
     if newStress > 100 then
         newStress = 100
     end
-    Player.Functions.SetMetaData('stress', newStress)
+    Player.Functions.SetStress(newStress)
     TriggerClientEvent('hud:client:UpdateStress', src, newStress)
     TriggerClientEvent('QBCore:Notify', src, Lang:t("notify.stress_gain"), 'error', 1500)
 end)
@@ -46,10 +46,10 @@ RegisterNetEvent('hud:server:RelieveStress', function(amount)
     local newStress
     if not Player then return end
     if not ResetStress then
-        if not Player.PlayerData.metadata['stress'] then
-            Player.PlayerData.metadata['stress'] = 0
+        if not Player.PlayerData.condition.stress then
+            Player.PlayerData.condition.stress = 0
         end
-        newStress = Player.PlayerData.metadata['stress'] - amount
+        newStress = Player.PlayerData.condition.stress - amount
         if newStress <= 0 then newStress = 0 end
     else
         newStress = 0
@@ -57,7 +57,7 @@ RegisterNetEvent('hud:server:RelieveStress', function(amount)
     if newStress > 100 then
         newStress = 100
     end
-    Player.Functions.SetMetaData('stress', newStress)
+    Player.Functions.SetStress(newStress)
     TriggerClientEvent('hud:client:UpdateStress', src, newStress)
     TriggerClientEvent('QBCore:Notify', src, Lang:t("notify.stress_removed"))
 end)

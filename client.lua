@@ -886,7 +886,7 @@ CreateThread(function()
                 end
             end
 
-            playerDead = IsEntityDead(player) or PlayerData.metadata["inlaststand"] or PlayerData.metadata["isdead"] or false
+            playerDead = IsEntityDead(player) or PlayerData.condition.in_last_stand or PlayerData.condition.in_dead or false
             parachute = GetPedParachuteState(player)
 
             -- Stamina

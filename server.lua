@@ -24,10 +24,10 @@ RegisterNetEvent('hud:server:GainStress', function(amount)
     if not Player or (Config.DisablePoliceStress and Player.PlayerData.job.name == 'police') then return end
     if not Player or (Config.DisableAmbulanceStress and (Player.PlayerData.job.name == 'ambulance' or Player.PlayerData.job.name == 'practitioner')) then return end
     if not ResetStress then
-        if not Player.PlayerData.metadata['stress'] then
-            Player.PlayerData.metadata['stress'] = 0
+        if not Player.PlayerData.condition.stress then
+            Player.Functions.SetStress(0)
         end
-        newStress = Player.PlayerData.metadata['stress'] + amount
+        newStress = Player.PlayerData.condition.stress + amount
         if newStress <= 0 then newStress = 0 end
     else
         newStress = 0

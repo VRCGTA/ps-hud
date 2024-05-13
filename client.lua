@@ -112,6 +112,10 @@ local function sendUIUpdateMessage(data)
 end
 
 local function HandleSetupResource()
+    PlayerData = QBCore.Functions.GetPlayerData()
+    stress = PlayerData.condition.stress
+    hunger = PlayerData.condition.hunger
+    thirst = PlayerData.condition.thirst
     QBCore.Functions.TriggerCallback('hud:server:getRank', function(isAdminOrGreater)
         if isAdminOrGreater then
             admin = true
